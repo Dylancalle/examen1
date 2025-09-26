@@ -23,8 +23,10 @@ fun DollarScreen(viewModelDollar: DollarViewModel = koinViewModel()) {
             is DollarViewModel.DollarUIState.Error -> Text(stateValue.message)
             DollarViewModel.DollarUIState.Loading -> CircularProgressIndicator()
             is DollarViewModel.DollarUIState.Success -> {
-                Text(stateValue.data.dollarOfficial!!)
-                Text(stateValue.data.dollarParallel!!)
+                Text("Dólar Oficial: ${stateValue.data.dollarOfficial!!}") // Etiqueta agregada para claridad
+                Text("Dólar Paralelo: ${stateValue.data.dollarParallel!!}") // Etiqueta agregada para claridad
+                Text("USDT a BS: ${stateValue.data.dollarUSDT!!}") // Campo USDT
+                Text("USDC a BS: ${stateValue.data.dollarUSDC!!}") // Campo USDC
             }
         }
     }
